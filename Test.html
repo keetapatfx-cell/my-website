@@ -1,0 +1,71 @@
+import React from "react";
+import { motion } from "framer-motion";
+
+export default function ModernWebsite() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+      {/* Navbar */}
+      <header className="flex justify-between items-center px-8 py-6">
+        <h1 className="text-2xl font-bold tracking-wide">KEETAPAT</h1>
+        <nav className="space-x-6 text-gray-300">
+          <a href="#home" className="hover:text-white">Home</a>
+          <a href="#about" className="hover:text-white">About</a>
+          <a href="#work" className="hover:text-white">Work</a>
+          <a href="#contact" className="hover:text-white">Contact</a>
+        </nav>
+      </header>
+
+      {/* Hero */}
+      <section id="home" className="px-8 py-20 text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-5xl font-bold mb-6"
+        >
+          Build. Trade. Grow.
+        </motion.h2>
+        <p className="text-gray-400 max-w-xl mx-auto">
+          เว็บไซต์ของผมสำหรับแสดงผลงาน การเทรด และโปรเจกต์ต่าง ๆ ที่กำลังพัฒนา
+        </p>
+      </section>
+
+      {/* About */}
+      <section id="about" className="px-8 py-16 max-w-4xl mx-auto">
+        <h3 className="text-3xl font-semibold mb-4">About Me</h3>
+        <p className="text-gray-400 leading-relaxed">
+          ผมเป็นคนที่สนใจด้านการเทรด การพัฒนาเว็บไซต์ และเทคโนโลยีใหม่ ๆ โดยเน้นการสร้างสิ่งที่ใช้งานได้จริงและสร้างรายได้
+        </p>
+      </section>
+
+      {/* Work Section */}
+      <section id="work" className="px-8 py-16">
+        <h3 className="text-3xl font-semibold mb-10 text-center">My Work</h3>
+        <div className="grid md:grid-cols-3 gap-6">
+          {[1, 2, 3].map((item) => (
+            <div key={item} className="bg-gray-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition">
+              <h4 className="text-xl font-semibold mb-2">Project {item}</h4>
+              <p className="text-gray-400 text-sm">
+                รายละเอียดโปรเจกต์ เช่น เว็บเทรด บอท หรือ dashboard
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="px-8 py-16 text-center">
+        <h3 className="text-3xl font-semibold mb-6">Contact</h3>
+        <p className="text-gray-400 mb-6">ติดต่อผมสำหรับงานหรือโปรเจกต์</p>
+        <button className="bg-white text-black px-6 py-3 rounded-2xl font-semibold hover:bg-gray-200 transition">
+          Contact Me
+        </button>
+      </section>
+
+      {/* Footer */}
+      <footer className="text-center py-6 text-gray-500 text-sm">
+        © 2026 Keetapat. All rights reserved.
+      </footer>
+    </div>
+  );
+}
